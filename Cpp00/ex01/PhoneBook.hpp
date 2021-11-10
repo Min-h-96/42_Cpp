@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:45:18 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/10 21:49:23 by minchoi          ###   ########.fr       */
+/*   Created: 2021/11/10 16:25:55 by minchoi           #+#    #+#             */
+/*   Updated: 2021/11/11 00:40:47 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <locale>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int	main(int argc, char *argv[])
+# include "Contact.hpp"
+# include <limits>
+
+class Phonebook
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else {
-		for (int i=1; i<argc; i++) {
-			int j = -1;
-			while (argv[i][++j] != 0)
-				std::cout << (char)std::toupper(argv[i][j]);
-		}
-		std::cout << std::endl;
-	}
-}
+	private:
+		int		amount;
+		int		oldest;
+		Contact contact[8];
+	public:
+		Phonebook();
+		~Phonebook();
+		void	replaceOldestContact(void);
+		void	addContact(void);
+		void	showContactHeader(void);
+		void	getContactList(void);
+};
+
+#endif

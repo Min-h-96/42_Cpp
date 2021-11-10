@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:45:18 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/10 21:49:23 by minchoi          ###   ########.fr       */
+/*   Created: 2021/11/10 16:14:40 by minchoi           #+#    #+#             */
+/*   Updated: 2021/11/10 23:35:18 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <locale>
+#include "PhoneBook.hpp"
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else {
-		for (int i=1; i<argc; i++) {
-			int j = -1;
-			while (argv[i][++j] != 0)
-				std::cout << (char)std::toupper(argv[i][j]);
-		}
-		std::cout << std::endl;
-	}
+	bool run = true;
+	std::string command;
+	Phonebook phonebook;
+
+	while (run) {
+		if (command.empty())
+			std::cout << "> ";
+		std::getline(std::cin, command);
+		if (command == "EXIT")
+			run = false;
+		else if (command == "ADD")
+			phonebook.addContact();
+		else if (command == "SEARCH")
+			phonebook.getContactList();
+		else
+			command.clear();
+    }
 }

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:45:18 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/10 21:49:23 by minchoi          ###   ########.fr       */
+/*   Created: 2021/11/10 16:21:36 by minchoi           #+#    #+#             */
+/*   Updated: 2021/11/11 00:39:19 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <locale>
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-int	main(int argc, char *argv[])
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+class Contact
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else {
-		for (int i=1; i<argc; i++) {
-			int j = -1;
-			while (argv[i][++j] != 0)
-				std::cout << (char)std::toupper(argv[i][j]);
-		}
-		std::cout << std::endl;
-	}
-}
+	private:
+		int index;
+		std::string info[5];
+	public:
+		Contact();
+		~Contact();
+		int		setInfo(int index);
+		void	getInfo(void);
+		void	setIndex(int index);
+		std::string	getIndex(void);
+		void	getHeaderInfo();
+};
+
+#endif
