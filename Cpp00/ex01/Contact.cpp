@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:14:37 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/11 00:39:23 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/13 15:33:39 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ std::string field_name[5] = {
 	"Secret"
 };
 
-Contact::Contact() {
+Contact::Contact(void) {
 	for (int i=0; i<5; i++)
 		this->info[i] = std::string();
 }
 
-Contact::~Contact() {
+Contact::~Contact(void) {
 }
 
 int Contact::setInfo(int index) {
