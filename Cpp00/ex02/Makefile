@@ -6,12 +6,12 @@
 #    By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/13 15:23:34 by minchoi           #+#    #+#              #
-#    Updated: 2021/11/15 11:57:35 by minchoi          ###   ########.fr        #
+#    Updated: 2021/11/15 15:38:16 by minchoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
-CFLAG = -Wextra -Werror -Wall
+CFLAG = -Wextra -Werror -Wall -std=c++98
 
 NAME = account
 

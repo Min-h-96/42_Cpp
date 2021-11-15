@@ -6,12 +6,12 @@
 #    By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 13:45:09 by minchoi           #+#    #+#              #
-#    Updated: 2021/11/10 16:26:30 by minchoi          ###   ########.fr        #
+#    Updated: 2021/11/15 15:38:13 by minchoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
-CFLAG = -Wextra -Werror -Wall
+CFLAG = -Wextra -Werror -Wall -std=c++98
 
 NAME = phonebook
 
