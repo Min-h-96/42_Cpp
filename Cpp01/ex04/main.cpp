@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/16 11:11:30 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/17 00:05:26 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int main(int argc, char *argv[]) {
 	}
 	std::string		filename(argv[1]);
 	std::ifstream	ifs(filename);
+	if (!ifs.is_open()) {
+		std::cout << "There is no file has that filename." << std::endl;
+		return (1);
+	}
 	std::ofstream	ofs(filename + ".replace");
 	std::string		s1(argv[2]);
 	std::string		s2(argv[3]);
