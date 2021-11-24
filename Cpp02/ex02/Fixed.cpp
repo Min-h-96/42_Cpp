@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:48:00 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/24 20:31:40 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/24 22:56:01 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::Fixed(const float val) {
 
 Fixed& Fixed::operator=(const Fixed& src) {
 	this->setRawBits(src.fixed_point);
-	return *this;
+	return (*this);
 }
 
 Fixed::~Fixed() {
@@ -54,7 +54,7 @@ int	Fixed::toInt(void) const {
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fix) {
 	out << fix.toFloat();
-	return out;
+	return (out);
 }
 
 bool	Fixed::operator>(const Fixed& fix) const {
