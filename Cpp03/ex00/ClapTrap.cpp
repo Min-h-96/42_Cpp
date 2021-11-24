@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:06:29 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/25 00:12:47 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/25 00:41:11 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,36 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		<< amount << " point." << std::endl;
 	this->hitPoints += amount;
 	std::cout << "ClapTrap " << this->name << " has " << this->hitPoints << " HP left." << std::endl;
+}
+
+std::string	ClapTrap::getName(void) const {
+	return (this->name);
+}
+
+void	ClapTrap::setName(const std::string name) {
+	this->name = name;
+}
+
+unsigned int	ClapTrap::getHitPoints(void) const {
+	return (this->hitPoints);
+}
+
+void	ClapTrap::setHitPoints(const unsigned int point) {
+	this->hitPoints = point;
+}
+
+unsigned int	ClapTrap::getEnergyPoints(void) const {
+	return (this->energyPoints);
+}
+
+void	ClapTrap::setEnergyPoints(const unsigned int point) {
+	this->energyPoints = point;
+}
+
+unsigned int	ClapTrap::getAttackDamage(void) const {
+	return (this->attackDamage);
+}
+
+void	ClapTrap::setAttackDamage(const unsigned int damage) {
+	this->attackDamage = damage;
 }
