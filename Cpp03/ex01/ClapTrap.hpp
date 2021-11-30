@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:06:36 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/29 18:03:25 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/29 18:43:19 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string name;
 		unsigned int hitPoints;
 		unsigned int energyPoints;

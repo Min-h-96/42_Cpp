@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:06:29 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/29 18:14:58 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/29 18:14:54 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ ClapTrap::ClapTrap() {
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	std::cout << this->name << ", Default constructor is called." << std::endl;
+	std::cout << this->name << ", ClapTrap default constructor is called." << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << this->name << ", Destructor is called." << std::endl;
+	std::cout << this->name << ", ClapTrap destructor is called." << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const& trap) {
 	*this = trap;
-	std::cout << this->name << ", Copy constructor is called." << std::endl;
+	std::cout << this->name << ", ClapTrap copy constructor is called." << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const& trap) {
@@ -34,7 +34,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& trap) {
 	this->hitPoints = trap.hitPoints;
 	this->energyPoints = trap.energyPoints;
 	this->attackDamage = trap.attackDamage;
-	std::cout << this->name << ", operator= is called." << std::endl;
+	std::cout << this->name << ", ClapTrap operator= is called." << std::endl;
 	return (*this);
 }
 
@@ -43,7 +43,7 @@ ClapTrap::ClapTrap(std::string const name) {
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	std::cout << this->name << ", Constructor is called." << std::endl;
+	std::cout << this->name << ", ClapTrap constructor is called." << std::endl;
 }
 
 void	ClapTrap::attack(std::string const& target) {

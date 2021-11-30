@@ -6,28 +6,25 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 13:32:09 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/30 13:33:28 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void ) {
-	ClapTrap a;
-	ClapTrap b("CLP4P-TP");
-
-	a.attack("Enemy1");
-	a = b;
-	a.attack("Enemy1");
-
-	b.attack("Enemy2");
-	b.takeDamage(5);
-	b.takeDamage(7);
-	b.beRepaired(7);
-
-	ClapTrap c(b);
-
-	c.attack("Enemy3");
+	{
+		ScavTrap a;
+	}
+	{
+		ScavTrap a("minchoi");
+		ScavTrap b(a);
+	}
+	{
+		ScavTrap a("minchoi");
+		a.attack("noname");
+		a.guardGate();
+	}
 	
 	return 0;
 }
