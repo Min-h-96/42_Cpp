@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 00:45:21 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 15:01:07 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/30 15:10:08 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap {
+class ScavTrap: public virtual ClapTrap {
 	public:
 		ScavTrap();
 		~ScavTrap();

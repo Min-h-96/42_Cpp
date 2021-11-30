@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 00:45:28 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 15:00:05 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/30 13:30:07 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ScavTrap::ScavTrap(ScavTrap const& scav) {
 	std::cout << this->name << ", ScavTrap copy constructor is called." << std::endl;
 }
 
-// ScavTrap& ScavTrap::operator=(ScavTrap const& scav) {
+// ScavTrap& ScavTrap::operator=( ScavTrap const& scav) {
 // 	ClapTrap::operator=(scav);
 // 	std::cout << this->name << ", ScavTrap operator= is called" << std::endl;
 // 	return *this;
