@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:15:12 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 15:06:57 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/01 14:48:39 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class DiamondTrap: public ScavTrap, public FragTrap {
 		~DiamondTrap();
 		DiamondTrap( std::string n);
 		DiamondTrap(DiamondTrap const& dia);
-		// DiamondTrap&	operator=( DiamondTrap const& Diamond);
+		DiamondTrap&	operator=( DiamondTrap const& diamond);
 		void	attack(std::string const & target);
 		void	whoAmI(void);
 };

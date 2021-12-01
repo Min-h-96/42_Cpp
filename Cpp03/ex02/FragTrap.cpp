@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 00:45:28 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 15:00:21 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/01 14:33:36 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ FragTrap::FragTrap(FragTrap const& frag) {
 	std::cout << this->name << ", FragTrap copy constructor is called." << std::endl;
 }
 
-// FragTrap& FragTrap::operator=(FragTrap const& frag) {
-// 	ClapTrap::operator=(frag);
-// 	std::cout << this->name << ", FragTrap operator= is called" << std::endl;
-// 	return *this;
-// }
+FragTrap& FragTrap::operator=(FragTrap const& frag) {
+	this->name = frag.name;
+	this->hitPoints = frag.hitPoints;
+	this->energyPoints = frag.energyPoints;
+	this->attackDamage = frag.attackDamage;
+	std::cout << this->name << ", FragTrap operator= is called" << std::endl;
+	return *this;
+}
 
 void	FragTrap::attack(std::string const& target) {
 	std::cout << "FragTrap " << this->name << " attacks " << target\

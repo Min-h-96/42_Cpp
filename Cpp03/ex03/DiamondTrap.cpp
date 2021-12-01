@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:15:07 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 15:24:27 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/01 15:06:21 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ DiamondTrap::~DiamondTrap() {
 DiamondTrap::DiamondTrap(std::string n): ClapTrap(n), FragTrap(n), ScavTrap(n), name(ClapTrap::name) {
 	ClapTrap::name += "_clap_name";
 	ClapTrap::energyPoints = 50;
-	std::cout << this->name << ", DiamondTrap default constructor is called." << std::endl;
+	std::cout << this->name << ", DiamondTrap constructor is called." << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const& dia) {
@@ -37,11 +37,15 @@ DiamondTrap::DiamondTrap(DiamondTrap const& dia) {
 	std::cout << this->name << ", DiamondTrap copy constructor is called." << std::endl;
 }
 
-// DiamondTrap&	DiamondTrap::operator=( DiamondTrap const& Diamond) {
-// 	ClapTrap::operator=(Diamond);
-// 	std::cout << "DiamondTrap " << this->Name << " operator= is called" << std::endl;
-// 	return *this;
-// }
+DiamondTrap&	DiamondTrap::operator=( DiamondTrap const& diamond) {
+	this->name = diamond.name;
+	this->hitPoints = diamond.hitPoints;
+	this->energyPoints = diamond.energyPoints;
+	this->attackDamage = diamond.attackDamage;
+	ClapTrap::name = this->name + "_clap_name";
+	std::cout << "DiamondTrap " << this->name << " operator= is called" << std::endl;
+	return *this;
+}
 
 void	DiamondTrap::attack(std::string const & target) {
 	ScavTrap::attack(target);

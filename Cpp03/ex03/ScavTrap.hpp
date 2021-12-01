@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 00:45:21 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 15:10:08 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/30 21:01:19 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ScavTrap: public virtual ClapTrap {
 		~ScavTrap();
 		ScavTrap(std::string const name);
 		ScavTrap(ScavTrap const& scav);
-		// ScavTrap&	operator=(ScavTrap const& scav);
+		ScavTrap&	operator=(ScavTrap const& scav);
 		void	attack(std::string const& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);

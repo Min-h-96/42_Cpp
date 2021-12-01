@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 00:45:21 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/30 15:00:45 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/11/30 21:01:51 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class FragTrap: public ClapTrap {
 		~FragTrap();
 		FragTrap(std::string const name);
 		FragTrap(FragTrap const& frag);
-		// FragTrap&	operator=(FragTrap const& frag);
+		FragTrap&	operator=(FragTrap const& frag);
 		void	attack(std::string const& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
