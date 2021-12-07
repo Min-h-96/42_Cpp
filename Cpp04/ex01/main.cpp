@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/07 13:04:16 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/07 13:06:23 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,4 @@ int main( void ) {
 	
 	std::cout << "-----Test Array-----" << std::endl;
 	test_array();
-	while (1);
 }
