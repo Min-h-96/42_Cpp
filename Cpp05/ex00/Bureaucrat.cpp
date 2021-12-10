@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 14:36:56 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/10 15:30:24 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/10 16:09:15 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ void		Bureaucrat::decrementGrade(void) {
 }
 
 std::ostream&	operator<<(std::ostream& o, const Bureaucrat& b) {
-	return (o << "[" << b.getName() << "], grade is " << b.getGrade());
+	return (o << "<" << b.getName() << ">, bureaucrat grade <" << b.getGrade()) << ">";
 }
