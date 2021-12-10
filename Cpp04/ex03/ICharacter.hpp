@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/07 16:50:16 by minchoi          ###   ########.fr       */
+/*   Created: 2021/12/07 14:09:16 by minchoi           #+#    #+#             */
+/*   Updated: 2021/12/10 13:24:10 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Animal.hpp"
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-void	test_subject(void) {
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+# include "AMateria.hpp"
 
-	delete j;
-	delete i;
-}
+class ICharacter {
+	public:
+		virtual ~ICharacter() {}
 
-// void	test_main(void) {
-// 	Animal a;
-// }
+		virtual std::string const&	getName() const = 0;
+		virtual void 				equip(AMateria* m) = 0;
+		virtual void 				unequip(int idx) = 0;
+		virtual void 				use(int idx, ICharacter& target) = 0;
+};
 
-int main( void ) {
-	std::cout << "-----Test Subject-----" << std::endl;
-	test_subject();
-	std::cout << std::endl;
-
-	// std::cout << "-----Test Main-----" << std::endl;
-	// test_main();
-}
+#endif

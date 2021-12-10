@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/07 16:50:16 by minchoi          ###   ########.fr       */
+/*   Created: 2021/12/07 14:59:35 by minchoi           #+#    #+#             */
+/*   Updated: 2021/12/07 16:19:13 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Animal.hpp"
+#ifndef Cure_HPP
+# define Cure_HPP
 
-void	test_subject(void) {
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-	delete j;
-	delete i;
-}
+# define C_NAME "cure"
 
-// void	test_main(void) {
-// 	Animal a;
-// }
+class Cure: public AMateria {
+	public:
+		Cure();
+		~Cure();
+		Cure(std::string const& type);
+		Cure(Cure const& i);
+		Cure& operator=(Cure const& i);
 
-int main( void ) {
-	std::cout << "-----Test Subject-----" << std::endl;
-	test_subject();
-	std::cout << std::endl;
+		AMateria*	clone() const;
+		void		use(ICharacter& target);
+};
 
-	// std::cout << "-----Test Main-----" << std::endl;
-	// test_main();
-}
+#endif

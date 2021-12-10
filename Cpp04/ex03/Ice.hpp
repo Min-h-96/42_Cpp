@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/07 16:50:16 by minchoi          ###   ########.fr       */
+/*   Created: 2021/12/07 14:40:44 by minchoi           #+#    #+#             */
+/*   Updated: 2021/12/07 16:19:03 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Animal.hpp"
+#ifndef ICE_HPP
+# define ICE_HPP
 
-void	test_subject(void) {
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-	delete j;
-	delete i;
-}
+# define I_NAME "ice"
 
-// void	test_main(void) {
-// 	Animal a;
-// }
+class Ice: public AMateria {
+	public:
+		Ice();
+		~Ice();
+		Ice(std::string const& type);
+		Ice(Ice const& i);
+		Ice& operator=(Ice const& i);
 
-int main( void ) {
-	std::cout << "-----Test Subject-----" << std::endl;
-	test_subject();
-	std::cout << std::endl;
+		AMateria*	clone() const;
+		void		use(ICharacter& target);
+};
 
-	// std::cout << "-----Test Main-----" << std::endl;
-	// test_main();
-}
+#endif

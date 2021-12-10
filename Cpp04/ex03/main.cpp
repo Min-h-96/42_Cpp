@@ -6,31 +6,35 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/07 16:50:16 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/10 13:41:53 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Animal.hpp"
-
-void	test_subject(void) {
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
-
-	delete j;
-	delete i;
-}
-
-// void	test_main(void) {
-// 	Animal a;
-// }
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main( void ) {
-	std::cout << "-----Test Subject-----" << std::endl;
-	test_subject();
-	std::cout << std::endl;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	// std::cout << "-----Test Main-----" << std::endl;
-	// test_main();
+	ICharacter* me = new Character("me");
+	ICharacter* bob = new Character("bob");
+
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
 }
