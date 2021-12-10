@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:21:54 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/10 13:42:39 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/10 14:08:45 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 MateriaSource::MateriaSource() {
 	for (int i=0; i<AM_SIZE; i++)
 		this->am[i] = NULL;
+	for (int i=0; i<1024; i++)
+		this->all_created[i] = NULL;
 	std::cout << "[" << std::setw(W_SIZE) << "Default Constructor on MateriaSource." << "] " << std::endl;
 }
 
@@ -23,6 +25,12 @@ MateriaSource::~MateriaSource() {
 		if (this->am[i]) {
 			delete this->am[i];
 			this->am[i] = NULL;
+		}
+	}
+	for (int i=0; i<1024; i++) {
+		if (this->all_created[i]) {
+			delete this->all_created[i];
+			this->all_created[i] = NULL;
 		}
 	}
 	std::cout << "[" << std::setw(W_SIZE) << "Destructor on MateriaSource." << "] " << std::endl;
@@ -85,7 +93,12 @@ AMateria*		MateriaSource::createMateria(std::string const & type) {
 		if (this->am[i] && this->am[i]->getType() == type) {
 			std::cout << "[" << std::setw(W_SIZE) << "createMateria Function on MateriaSource." << "] "
 					<< type << std::endl;
-			return (this->am[i]->clone());
+			for (int j=0; j<1024; j++) {
+				if (all_created[j] == NULL) {
+					all_created[j] = this->am[i]->clone();
+					return (all_created[j]);
+				}
+			}
 		}
 	}
 	std::cout << "[" << std::setw(W_SIZE) << "createMateria Function on MateriaSource." << "] "

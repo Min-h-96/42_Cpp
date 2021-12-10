@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:44:56 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/10 13:42:27 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/10 14:00:50 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class MateriaSource: public IMateriaSource {
 	private:
 		AMateria*	am[AM_SIZE];
+		AMateria*	all_created[1024];
 	public:
 		MateriaSource();
 		~MateriaSource();

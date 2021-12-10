@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/10 13:41:53 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/10 14:07:58 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,34 @@ int main( void ) {
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->use(2, *bob);
 	me->use(3, *bob);
+
+	me->unequip(1);
+	me->unequip(2);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	
+	me->unequip(2);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	tmp = src->createMateria("ice");
+	bob->equip(tmp);
 
 	delete bob;
 	delete me;

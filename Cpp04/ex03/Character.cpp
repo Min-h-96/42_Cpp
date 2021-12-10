@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:12:35 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/07 17:40:26 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/10 14:09:16 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ Character::Character(): name("") {
 }
 
 Character::~Character() {
-	for (int i=0; i<AM_SIZE; i++) {
-		if (inven[i]) {
-			delete inven[i];
-			inven[i] = NULL;
-		}
-	}
+	// for (int i=0; i<AM_SIZE; i++) {
+	// 	if (inven[i]) {
+	// 		delete inven[i];
+	// 		inven[i] = NULL;
+	// 	}
+	// }
 	std::cout << "[" << std::setw(W_SIZE) << "Destructor on Character." << "] " << this->name << std::endl;
 }
 
@@ -94,7 +94,7 @@ void 				Character::unequip(int idx) {
 	if (idx >= 0 && idx < AM_SIZE && this->inven[idx])
 	{
 		this->inven[idx] = NULL;
-		std::cout << "[ " << std::setw(W_SIZE) << "unequip Function on Character" << "] " << this->name << std::endl;
+		std::cout << "[" << std::setw(W_SIZE) << "unequip Function on Character" << "] " << this->name << std::endl;
 		return ;
 	} else
 		std::cout << "[" << std::setw(W_SIZE) << "equip Function on Character." << "] " << this->name
@@ -105,6 +105,6 @@ void 				Character::use(int idx, ICharacter& target) {
 	if (idx >= 0 && idx < AM_SIZE && this->inven[idx])
 		this->inven[idx]->use(target);
 	else
-		std::cout << "[ " << std::setw(W_SIZE) << "use Function on Character" << "] "
-				<< this->name << " failed to use (Empty or Wrong Access)" << std::endl;
+		std::cout << "[" << std::setw(W_SIZE) << "use Function on Character" << "] "
+				<< this->name << " Failed to use (Empty or Wrong index)" << std::endl;
 }
