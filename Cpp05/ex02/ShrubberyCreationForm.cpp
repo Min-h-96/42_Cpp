@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 13:00:47 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/11 14:27:01 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/11 19:25:34 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 void	ShrubberyCreationForm::execute(Bureaucrat const& b) const {
 	executable(b);
 	
-	std::ofstream	out("<" + this->getName() + ">_shrubbery");
+	std::string		filename = "<" + this->getName() + ">_shrubbery";
+	std::ofstream	out(filename.c_str());
 	out << "                    " << std::endl
 		<< "          &&& &&  & &&" << std::endl
 		<< "      && &\\/&\\|& ()|/ @, &&" << std::endl
