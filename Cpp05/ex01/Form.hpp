@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/11 11:34:07 by minchoi           #+#    #+#             */
+/*   Updated: 2021/12/11 12:34:53 by minchoi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FORM_HPP
+# define FORM_HPP
+
+# include "Bureaucrat.hpp"
+# include <string>
+# include <exception>
+# include <iostream>
+
+# define MAX_GRADE 1
+# define MIN_GRADE 150
+
+class Form {
+	private:
+		const std::string	name;
+		bool				sign;
+		const int			signGrade;
+		const int			execGrade;
+
+		Form();
+	public:
+		~Form();
+		Form(const std::string& name, const int& signGrade, const int& execGrade);
+		Form(Form const& f);
+		Form&	operator=(Form const& f);
+
+		class GradeTooHighException: public std::exception {
+			public:
+				const char* what(void) const throw();
+		};
+		class GradeTooLowException: public std::exception {
+			public:
+				const char* what(void) const throw();
+		};
+
+		const std::string	getName(void) const;
+		const bool			getSign(void) const;
+		const int			getSignGrade(void) const;
+		const int			getExecGrade(void) const;
+
+		void				beSigned(Bureaucrat const& b);
+};
+
+std::ostream&	operator<<(std::ostream& o, const Form& f);
+
+#endif
