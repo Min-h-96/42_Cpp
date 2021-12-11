@@ -6,7 +6,7 @@
 #    By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/13 15:23:34 by minchoi           #+#    #+#              #
-#    Updated: 2021/11/15 15:38:16 by minchoi          ###   ########.fr        #
+#    Updated: 2021/12/11 15:31:04 by minchoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,11 @@ SRCS = Account.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
+%.o: %.cpp
+	$(CC) $(CFLAG) -I./ -c $< -o $@
+
 $(NAME): $(OBJS)
-	$(CC) $(CFLAG) -I./ -o $(NAME) $(OBJS)
+	$(CC) $(CFLAG) -I./ $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

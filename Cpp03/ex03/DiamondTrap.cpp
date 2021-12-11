@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:15:07 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/01 15:06:21 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/11 15:38:07 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ DiamondTrap::~DiamondTrap() {
 	std::cout << this->name << ", DiamondTrap destructor is called." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string n): ClapTrap(n), FragTrap(n), ScavTrap(n), name(ClapTrap::name) {
+DiamondTrap::DiamondTrap(std::string n): ClapTrap(n), ScavTrap(n), FragTrap(n), name(ClapTrap::name) {
 	ClapTrap::name += "_clap_name";
 	ClapTrap::energyPoints = 50;
 	std::cout << this->name << ", DiamondTrap constructor is called." << std::endl;

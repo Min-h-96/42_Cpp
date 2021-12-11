@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:18:13 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/07 16:17:30 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/11 15:40:43 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,4 @@ AMateria&	AMateria::operator=(AMateria const& am) {
 
 std::string const&	AMateria::getType(void) const {
 	return (this->type);
-}
-
-void				AMateria::use(ICharacter& target) {
-	std::cout << "[" << std::setw(W_SIZE) << "use Function on AMateria." << "]" << std::endl;
 }

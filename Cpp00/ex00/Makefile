@@ -6,7 +6,7 @@
 #    By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 13:45:09 by minchoi           #+#    #+#              #
-#    Updated: 2021/11/15 15:38:11 by minchoi          ###   ########.fr        #
+#    Updated: 2021/12/11 15:30:56 by minchoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,11 @@ NAME = megaphone
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
+%.o: %.cpp
+	$(CC) $(CFLAG) -I./ -c $< -o $@
+
 $(NAME): $(OBJS)
-	$(CC) $(CFLAG) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAG) -I./ $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

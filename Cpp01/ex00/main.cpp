@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:23:39 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/16 21:50:15 by minchoi          ###   ########.fr       */
+/*   Updated: 2021/12/11 15:33:22 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	main(void) {
 	zombieHeap = newZombie("minchoi");
 	zombieHeap->announce();
 	randomChump("minchoi");
-	delete z2;
+	delete zombieHeap;
 }
