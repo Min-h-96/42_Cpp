@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/17 00:05:26 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/08 16:37:18 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,20 @@ int main(int argc, char *argv[]) {
 	std::ofstream	ofs(filename + ".replace");
 	std::string		s1(argv[2]);
 	std::string		s2(argv[3]);
-	std::string 	readstr;
-	char 			c;
 	if (ifs.is_open() && ofs.is_open()) {
-		while (ifs.get(c)) {
-			readstr += c;
-			if (readstr.size() == s1.size()) {
-				if (readstr == s1)
-					ofs << s2;
-				else
-					ofs << readstr;
-				readstr.clear();
+		while (!ifs.eof()) {
+			std::string	readstr;
+			getline(ifs, readstr);
+			std::size_t found;
+			while ((found = readstr.find(s1)) != std::string::npos) {
+				readstr.erase(found, s1.length());
+				readstr.insert(found, s2);
 			}
+			ofs << readstr;
+			if (!ifs.eof())
+				ofs << "\n";
 		}
 	}
-	if (!readstr.empty())
-		ofs << readstr;
 	ofs.close();
 	ifs.close();
 }
