@@ -6,13 +6,12 @@
 #    By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/15 14:23:35 by minchoi           #+#    #+#              #
-#    Updated: 2022/02/05 20:41:04 by minchoi          ###   ########.fr        #
+#    Updated: 2022/02/09 20:11:39 by minchoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
-# -Wextra -Werror -Wall
-CFLAG = -std=c++98
+CFLAG = -std=c++98 -Wextra -Werror -Wall
 
 NAME = convert
 
