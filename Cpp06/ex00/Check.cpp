@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:16:44 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/09 15:23:03 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/09 15:53:57 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ bool	checkInt(std::string& str) {
 		if (!isdigit(str[i]))
 			return false;
 	}
+	if (strtod(str.c_str(), NULL) > INT_MAX || strtod(str.c_str(), NULL) < INT_MIN)
+		return false;
 	return true;
 }
 
@@ -69,9 +71,9 @@ bool	checkDouble(std::string& str) {
 }
 
 t_type	checkExcept(std::string& str) {
-	if (!str.compare("+inff") || !str.compare("-inff") || !str.compare("nanf"))
+	if (!str.compare("inff") || !str.compare("+inff") || !str.compare("-inff") || !str.compare("nanf"))
 		return FLOAT;
-	if (!str.compare("+inf") || !str.compare("-inf") || !str.compare("nan"))
+	if (!str.compare("inf") || !str.compare("+inf") || !str.compare("-inf") || !str.compare("nan"))
 		return DOUBLE;
 	return UNKNOWN;
 }

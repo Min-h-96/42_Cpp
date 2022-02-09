@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 19:59:26 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/09 15:39:26 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/09 15:54:40 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,12 @@ void	fromInt(std::string& str) {
 void	fromFloat(std::string& str) {
 	double d = strtod(str.c_str(), NULL);
 
-	if (!str.compare("+inff") || !str.compare("-inff") || !str.compare("nanf")) {
+	if (!str.compare("inff") || !str.compare("+inff") || !str.compare("-inff") || !str.compare("nanf")) {
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: ";
-		if (!str.compare("+inff"))
-			std::cout << "+";
 		std::cout << static_cast<float>(d) << "f" << std::endl;
 		std::cout << "double: ";
-		if (!str.compare("+inff"))
-			std::cout << "+";
 		std::cout << static_cast<double>(d) << std::endl;
 		return ;
 	}
@@ -73,7 +69,7 @@ void	fromFloat(std::string& str) {
 	else
 		std::cout << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(d);
-	if (static_cast<float>(d) - i == 0 && d < 1000000)
+	if (static_cast<double>(d) - i == 0 && d < 1000000)
 		std::cout << ".0" << std::endl;
 	else
 		std::cout << std::endl;
@@ -82,16 +78,12 @@ void	fromFloat(std::string& str) {
 void	fromDouble(std::string& str) {
 	double d = strtod(str.c_str(), NULL);
 
-	if (!str.compare("+inf") || !str.compare("-inf") || !str.compare("nan")) {
+	if (!str.compare("inf") || !str.compare("+inf") || !str.compare("-inf") || !str.compare("nan")) {
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: ";
-		if (!str.compare("+inf"))
-			std::cout << "+";
 		std::cout << static_cast<float>(d) << "f" << std::endl;
 		std::cout << "double: ";
-		if (!str.compare("+inf"))
-			std::cout << "+";
 		std::cout << static_cast<double>(d) << std::endl;
 		return ;
 	}
@@ -111,7 +103,7 @@ void	fromDouble(std::string& str) {
 	else
 		std::cout << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(d);
-	if (static_cast<float>(d) - i == 0 && d < 1000000)
+	if (static_cast<double>(d) - i == 0 && d < 1000000)
 		std::cout << ".0" << std::endl;
 	else
 		std::cout << std::endl;
