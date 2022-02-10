@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:24:42 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/11 00:28:44 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/11 01:19:38 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ template <typename T>
 T&	Array<T>::operator[](unsigned int i) {
 	if (i == 0)
 		return this->_arr[0];
-	if (i > this->_size)
+	if (i >= this->_size)
 		throw Array<T>::OutOfRangeException();
 	return this->_arr[i];
 }
