@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:24:42 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/11 01:19:38 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/11 12:51:19 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ Array<T>::Array(const Array<T>& a) {
 
 template <typename T>
 Array<T>&	Array<T>::operator=(const Array<T>& a) {
-	if (this == a)
-		return this;
+	if (this == &a)
+		return *this;
 	this->_arr = new T[a._size];
     this->_size = a._size;
     for (int i = 0; i < a._size; i++)
         this->_arr[i] = a._arr[i];
-    return this;
+    return *this;
 }
 
 template <typename T>
