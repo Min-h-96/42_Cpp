@@ -6,14 +6,14 @@
 #    By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/15 14:23:35 by minchoi           #+#    #+#              #
-#    Updated: 2022/02/10 15:28:04 by minchoi          ###   ########.fr        #
+#    Updated: 2022/02/11 12:27:37 by minchoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
 CFLAG = -std=c++98 -Wextra -Werror -Wall
 
-NAME = template
+NAME = easyfind
 
 SRCS = main.cpp\
 		
