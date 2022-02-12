@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:02:31 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/24 16:49:11 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/12 13:58:56 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ int main( void ) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+	std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+	std::cout << "c is " << c.toFloat() << " as float" << std::endl;
+	std::cout << "d is " << d.toFloat() << " as float" << std::endl;
 	
 	return 0;
 }
