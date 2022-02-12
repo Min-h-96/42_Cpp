@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:48:00 by minchoi           #+#    #+#             */
-/*   Updated: 2021/11/23 16:38:59 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/12 13:43:09 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int	Fixed::getRawBits(void) const {
 }
 
 void Fixed::setRawBits(const int raw) {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->fixed_point = raw;
 }
