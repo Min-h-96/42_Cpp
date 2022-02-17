@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 18:52:22 by minchoi           #+#    #+#             */
-/*   Updated: 2021/12/12 22:00:24 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/14 00:48:13 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Form*		Intern::makeForm(const std::string& type, const std::string& target) {
 		"president pardon"
 	};
 	Form*	(Intern::* func[3])(const std::string) = {
-		&Intern::makdShrubbery,
-		&Intern::makdRobotomy,
+		&Intern::makeShrubbery,
+		&Intern::makeRobotomy,
 		&Intern::makePresident
 	};
 
@@ -47,11 +47,11 @@ Form*		Intern::makeForm(const std::string& type, const std::string& target) {
 	throw Intern::NoMatchedFormTypeException();
 }
 
-Form*		Intern::makdShrubbery(const std::string target) {
+Form*		Intern::makeShrubbery(const std::string target) {
 	return (new ShrubberyCreationForm(target));
 }
 
-Form*		Intern::makdRobotomy(const std::string target) {
+Form*		Intern::makeRobotomy(const std::string target) {
 	return (new RobotomyRequestForm(target));
 }
 
