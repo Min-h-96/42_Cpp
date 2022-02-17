@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 19:59:26 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/09 15:54:40 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/17 20:59:44 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ void	fromFloat(std::string& str) {
 		return ;
 	}
 
-	if (static_cast<char>(d) < 32 || static_cast<char>(d) > 126)
+	if (d < static_cast<double>(CHAR_MIN) || d > static_cast<double>(CHAR_MAX))
+		std::cout << "char: Overflow/Underflow" << std::endl;
+	else if (d < 32 || static_cast<char>(d) > 126)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: " << static_cast<char>(d) << std::endl;
@@ -88,7 +90,9 @@ void	fromDouble(std::string& str) {
 		return ;
 	}
 
-	if (static_cast<char>(d) < 32 || static_cast<char>(d) > 126)
+	if (d < static_cast<double>(CHAR_MIN) || d > static_cast<double>(CHAR_MAX))
+		std::cout << "char: Overflow/Underflow" << std::endl;
+	else if (d < 32 || static_cast<char>(d) > 126)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: " << static_cast<char>(d) << std::endl;
