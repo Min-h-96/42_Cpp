@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 22:33:22 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/11 01:21:08 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/18 18:05:51 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int	main(void) {
 	{
+		std::cout << "--- Basic Test ---" << std::endl;
 		Array<std::string> s(2);
 
 		s[0] = "42";
@@ -26,7 +27,7 @@ int	main(void) {
 		std::cout << std::endl;
 		
 		Array<std::string> sCopy(s);
-		std::cout << "Check Deep Copy : ";
+		std::cout << "Check Deep Copy : " << std::endl;;
 		sCopy[0] = "42change";
 		std::cout << "sCopy[0] : " << sCopy[0] << std::endl;
 		std::cout << "s[0] : " << s[0] << std::endl;
@@ -55,53 +56,11 @@ int	main(void) {
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
-	}
-	{
-		Array<int> numbers(MAX_VAL);
-    	int* mirror = new int[MAX_VAL];
-    	srand(time(NULL));
-    	for (int i = 0; i < MAX_VAL; i++)
-    	{
-    	    const int value = rand();
-    	    numbers[i] = value;
-    	    mirror[i] = value;
-    	}
-    	//SCOPE
-    	{
-    	    Array<int> tmp = numbers;
-    	    Array<int> test(tmp);
-    	}
-
-    	for (int i = 0; i < MAX_VAL; i++)
-    	{
-    	    if (mirror[i] != numbers[i])
-    	    {
-    	        std::cerr << "didn't save the same value!!" << std::endl;
-    	        return 1;
-    	    }
-    	}
-    	try
-    	{
-    	    numbers[-2] = 0;
-    	}
-    	catch(const std::exception& e)
-    	{
+		try {
+    	    arrInt[-2] = 0;
+    	} catch(const std::exception& e) {
     	    std::cerr << e.what() << '\n';
     	}
-    	try
-    	{
-    	    numbers[MAX_VAL] = 0;
-    	}
-    	catch(const std::exception& e)
-    	{
-    	    std::cerr << e.what() << '\n';
-    	}
-
-    	for (int i = 0; i < MAX_VAL; i++)
-    	{
-    	    numbers[i] = rand();
-    	}
-    	delete [] mirror;//
 	}
 	
 	return 0;
