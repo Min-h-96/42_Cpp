@@ -6,7 +6,7 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 15:28:42 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/10 15:48:58 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/19 11:57:43 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 template <typename T>
-void	swap(T a, T b) {
+void		swap(T &a, T &b) {
 	T	t;
 	t = b;
 	b = a;
@@ -24,7 +24,7 @@ void	swap(T a, T b) {
 }
 
 template <typename T>
-T		min(T a, T b) {
+const T		min(T &a, T &b) {
 	if (a < b)
 		return a;
 	else
@@ -32,7 +32,7 @@ T		min(T a, T b) {
 }
 
 template <typename T>
-T		max(T a, T b) {
+const T		max(const T &a, const T &b) {
 	if (a > b)
 		return a;
 	else
