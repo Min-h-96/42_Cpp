@@ -6,12 +6,11 @@
 /*   By: minchoi <minchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:11:00 by minchoi           #+#    #+#             */
-/*   Updated: 2022/02/11 14:51:53 by minchoi          ###   ########.fr       */
+/*   Updated: 2022/02/21 14:05:48 by minchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
-#include "mutantstack.cpp"
 #include <list>
 
 int main(void) {
